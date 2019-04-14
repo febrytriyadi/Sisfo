@@ -18,7 +18,8 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/sb-admin-2.css" rel="stylesheet">
-
+  <link rel="stylesheet" id="compiled.css-css" href="css/compiled.css" type="text/css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/table.css">
 
 </head>
 <style type="text/css">
@@ -385,89 +386,309 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: black">
 
       <!-- Main Content -->
       <div id="content">
 
         <!-- Topbar -->
-        
-        <!-- End of Topbar -->
-        <div id="particles-js">
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Daftar Laporan</h1>
-          <div class="container">
-            <div style="float: right; margin-bottom: 30px;">
-              <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
             </div>
-            <div class="bs-docs-example">
-            <table class="table table-striped">
-              <thead>
-              <tr>
-                <th>No Laporan</th>
-                <th>Nama Laporan</th>
-                <th>Nama Barang</th>
-                <th>Jumlah</th>
-                <th>Tanggal</th>
-                <th>Total Harga</th>
-              </tr>
-              </thead>
-                
-              <tbody>
-              <tr>  
-                <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
-                <td>Rp. 100.000,00</td>
-              </tr>
-              <tr>  
-                <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
-                <td>Rp. 100.000,00</td>
-              </tr>
-              <tr>  
-                <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
-                <td>Rp. 100.000,00</td>
-              </tr>
-              <tr>  
-                <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
-                <td>Rp. 100.000,00</td>
-              </tr>
-              </tbody>
-                
-            </table>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- Begin Page Content -->
+        <main>
+      <section id="basic-example">
+        <h2 class="section-heading mb-4">
+          Basic example
+        </h2>
+        <!--Section: Live preview-->
+        <section>
+          <div id="dtBasicExample_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+              <div class="col-sm-12">
+                <table id="dtBasicExample" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dtBasicExample_info" style="width: 100%;">
+                  <thead>
+                    <tr role="row"><th class="th-sm sorting_asc" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name
+                      : activate to sort column descending" style="width: 116.021px;">Name
+                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Position
+                      : activate to sort column ascending" style="width: 181.021px;">Position
+                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Office
+                      : activate to sort column ascending" style="width: 82.0208px;">Office
+                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Age
+                      : activate to sort column ascending" style="width: 63.0208px;">Age
+                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Start date
+                      : activate to sort column ascending" style="width: 74.0208px;">Start date
+                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Salary
+                      : activate to sort column ascending" style="width: 64.0208px;">Salary
+                      </th></tr>
+                  </thead>
+                  <tbody>
+                    <tr role="row" class="odd">
+                      <td class="sorting_1">Ashton Cox</td>
+                      <td>Junior Technical Author</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td>$86,000</td>
+                    </tr><tr role="row" class="odd">
+                      <td class="sorting_1">Cara Stevens</td>
+                      <td>Sales Assistant</td>
+                      <td>New York</td>
+                      <td>46</td>
+                      <td>2011/12/06</td>
+                      <td>$145,600</td>
+                    </tr><tr role="row" class="even">
+                      <td class="sorting_1">Cedric Kelly</td>
+                      <td>Senior Javascript Developer</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2012/03/29</td>
+                      <td>$433,060</td>
+                    </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
-        <!-- /.container-fluid -->
-        </div>
-        <script type="text/javascript" src="particles.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+      </div>
+      </section>
+      </section>
+      </main>
+
+      <script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/4.7.6/compiled.0.min.js?ver=4.7.6"></script>
+      <script type="text/javascript" src="js/tablejs.js"></script>
+      <!-- Datatables initialization -->
+      <script>
+        // Basic example
+        $(document).ready(function () {
+          $('#dtBasicExample').DataTable();
+          $('.dataTables_length').addClass('bs-select');
+        });
+
+        // Material Design example
+        $(document).ready(function () {
+          $('#dtMaterialDesignExample').DataTable();
+          $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
+            $(this).parent().append($(this).children());
+          });
+          $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
+            $('input').attr("placeholder", "Search");
+            $('input').removeClass('form-control-sm');
+          });
+          $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
+          $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
+          $('#dtMaterialDesignExample_wrapper select').removeClass(
+            'custom-select custom-select-sm form-control form-control-sm');
+          $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
+          $('#dtMaterialDesignExample_wrapper .mdb-select').material_select();
+          $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
+
+          $('#dt-basic-checkbox, #dt-material-checkbox').dataTable({
+
+            columnDefs: [{
+              orderable: false,
+              className: 'select-checkbox',
+              targets: 0
+            }],
+            select: {
+              style: 'os',
+              selector: 'td:first-child'
+            }
+          });
+
+          $('#dt-material-checkbox_wrapper').find('label').each(function () {
+            $(this).parent().append($(this).children());
+          });
+          $('#dt-material-checkbox_wrapper .dataTables_filter').find('input').each(function () {
+            $('input').attr("placeholder", "Search");
+            $('input').removeClass('form-control-sm');
+          });
+          $('#dt-material-checkbox_wrapper .dataTables_length').addClass('d-flex flex-row');
+          $('#dt-material-checkbox_wrapper .dataTables_filter').addClass('md-form');
+          $('#dt-material-checkbox_wrapper select').removeClass(
+            'custom-select custom-select-sm form-control form-control-sm');
+          $('#dt-material-checkbox_wrapper select').addClass('mdb-select');
+          $('#dt-material-checkbox_wrapper .mdb-select').materialSelect();
+          $('#dt-material-checkbox_wrapper .dataTables_filter').find('label').remove();
+        });
+
+      </script>
       </div>
       <!-- End of Main Content -->
 
