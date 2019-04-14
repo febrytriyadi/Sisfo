@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>SB Admin 2 - Daftar Laporan</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,8 +18,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link href="css/sb-admin-2.css" rel="stylesheet">
-  <link rel="stylesheet" id="compiled.css-css" href="css/compiled.css" type="text/css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/table.css">
+
 
 </head>
 <style type="text/css">
@@ -289,47 +288,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
       <li class="nav-item">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Interface
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
+          <span>Home</span></a>
       </li>
 
       <!-- Divider -->
@@ -354,8 +313,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item" href="pembayaran.html">Pembayaran</a>
+            <a class="collapse-item active" href="datalaporan.php">Laporan</a>
           </div>
         </div>
       </li>
@@ -386,7 +345,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column" style="background-color: black">
+    <div id="content-wrapper" class="d-flex flex-column" >
 
       <!-- Main Content -->
       <div id="content">
@@ -572,123 +531,70 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
           </ul>
 
         </nav>
+        <!-- End of Topbar -->
+
         <!-- Begin Page Content -->
-        <main>
-      <section id="basic-example">
-        <h2 class="section-heading mb-4">
-          Basic example
-        </h2>
-        <!--Section: Live preview-->
-        <section>
-          <div id="dtBasicExample_wrapper" class="dataTables_wrapper dt-bootstrap4">
-            <div class="row">
-              <div class="col-sm-12">
-                <table id="dtBasicExample" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dtBasicExample_info" style="width: 100%;">
-                  <thead>
-                    <tr role="row"><th class="th-sm sorting_asc" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name
-                      : activate to sort column descending" style="width: 116.021px;">Name
-                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Position
-                      : activate to sort column ascending" style="width: 181.021px;">Position
-                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Office
-                      : activate to sort column ascending" style="width: 82.0208px;">Office
-                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Age
-                      : activate to sort column ascending" style="width: 63.0208px;">Age
-                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Start date
-                      : activate to sort column ascending" style="width: 74.0208px;">Start date
-                      </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Salary
-                      : activate to sort column ascending" style="width: 64.0208px;">Salary
-                      </th></tr>
-                  </thead>
-                  <tbody>
-                    <tr role="row" class="odd">
-                      <td class="sorting_1">Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr><tr role="row" class="odd">
-                      <td class="sorting_1">Cara Stevens</td>
-                      <td>Sales Assistant</td>
-                      <td>New York</td>
-                      <td>46</td>
-                      <td>2011/12/06</td>
-                      <td>$145,600</td>
-                    </tr><tr role="row" class="even">
-                      <td class="sorting_1">Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                </tbody>
-              </table>
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Daftar Laporan</h1>
+          <div class="container">
+            <div class="bs-docs-example">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>No Laporan</th>
+                <th>Nama Laporan</th>
+                <th>Nama Barang</th>
+                <th>Jumlah</th>
+                <th>Tanggal</th>
+                <th>Total Harga</th>
+              </tr>
+              </thead>
+                
+              <tbody>
+              <tr>  
+                <td>LAP01</td>
+                <td>Laporan Barang Masuk</td>
+                <td>Barang 1</td>
+                <td>100</td>
+                <td>01-02-2019</td>
+                <td>Rp. 100.000,00</td>
+              </tr>
+              <tr>  
+                <td>LAP01</td>
+                <td>Laporan Barang Masuk</td>
+                <td>Barang 1</td>
+                <td>100</td>
+                <td>01-02-2019</td>
+                <td>Rp. 100.000,00</td>
+              </tr>
+              <tr>  
+                <td>LAP01</td>
+                <td>Laporan Barang Masuk</td>
+                <td>Barang 1</td>
+                <td>100</td>
+                <td>01-02-2019</td>
+                <td>Rp. 100.000,00</td>
+              </tr>
+              <tr>  
+                <td>LAP01</td>
+                <td>Laporan Barang Masuk</td>
+                <td>Barang 1</td>
+                <td>100</td>
+                <td>01-02-2019</td>
+                <td>Rp. 100.000,00</td>
+              </tr>
+              </tbody>
+                
+            </table>
             </div>
           </div>
-      </div>
-      </section>
-      </section>
-      </main>
-
-      <script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/4.7.6/compiled.0.min.js?ver=4.7.6"></script>
-      <script type="text/javascript" src="js/tablejs.js"></script>
-      <!-- Datatables initialization -->
-      <script>
-        // Basic example
-        $(document).ready(function () {
-          $('#dtBasicExample').DataTable();
-          $('.dataTables_length').addClass('bs-select');
-        });
-
-        // Material Design example
-        $(document).ready(function () {
-          $('#dtMaterialDesignExample').DataTable();
-          $('#dtMaterialDesignExample_wrapper').find('label').each(function () {
-            $(this).parent().append($(this).children());
-          });
-          $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('input').each(function () {
-            $('input').attr("placeholder", "Search");
-            $('input').removeClass('form-control-sm');
-          });
-          $('#dtMaterialDesignExample_wrapper .dataTables_length').addClass('d-flex flex-row');
-          $('#dtMaterialDesignExample_wrapper .dataTables_filter').addClass('md-form');
-          $('#dtMaterialDesignExample_wrapper select').removeClass(
-            'custom-select custom-select-sm form-control form-control-sm');
-          $('#dtMaterialDesignExample_wrapper select').addClass('mdb-select');
-          $('#dtMaterialDesignExample_wrapper .mdb-select').material_select();
-          $('#dtMaterialDesignExample_wrapper .dataTables_filter').find('label').remove();
-
-          $('#dt-basic-checkbox, #dt-material-checkbox').dataTable({
-
-            columnDefs: [{
-              orderable: false,
-              className: 'select-checkbox',
-              targets: 0
-            }],
-            select: {
-              style: 'os',
-              selector: 'td:first-child'
-            }
-          });
-
-          $('#dt-material-checkbox_wrapper').find('label').each(function () {
-            $(this).parent().append($(this).children());
-          });
-          $('#dt-material-checkbox_wrapper .dataTables_filter').find('input').each(function () {
-            $('input').attr("placeholder", "Search");
-            $('input').removeClass('form-control-sm');
-          });
-          $('#dt-material-checkbox_wrapper .dataTables_length').addClass('d-flex flex-row');
-          $('#dt-material-checkbox_wrapper .dataTables_filter').addClass('md-form');
-          $('#dt-material-checkbox_wrapper select').removeClass(
-            'custom-select custom-select-sm form-control form-control-sm');
-          $('#dt-material-checkbox_wrapper select').addClass('mdb-select');
-          $('#dt-material-checkbox_wrapper .mdb-select').materialSelect();
-          $('#dt-material-checkbox_wrapper .dataTables_filter').find('label').remove();
-        });
-
-      </script>
+        </div>
+        <!-- /.container-fluid -->
+        <div id="particles-js"></div>
+        <script type="text/javascript" src="particles.js"></script>
+        <script type="text/javascript" src="app.js"></script>
       </div>
       <!-- End of Main Content -->
 
