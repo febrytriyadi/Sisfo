@@ -417,45 +417,49 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
               <thead>
               <tr>
                 <th>No Laporan</th>
-                <th>Nama Laporan</th>
-                <th>Nama Barang</th>
-                <th>Jumlah</th>
-                <th>Tanggal</th>
-                <th>Total Harga</th>
+                <th>Jabatan</th>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Status</th>
+                <th>No Telp</th>
+                <th>Gaji</th>
               </tr>
               </thead>
-                
               <tbody>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
+                <td>Office Girl</td>
+                <td>1301164268</td>
+                <td>Nisrina Nurhuda</td>
+                <td>Pegawai Tetap</td>
+                <td>081395939188</td>
                 <td>Rp. 100.000,00</td>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
+                <td>Office Girl</td>
+                <td>1301164268</td>
+                <td>Nisrina Nurhuda</td>
+                <td>Pegawai Tetap</td>
+                <td>081395939188</td>
                 <td>Rp. 100.000,00</td>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
+                <td>Office Girl</td>
+                <td>1301164268</td>
+                <td>Nisrina Nurhuda</td>
+                <td>Pegawai Tetap</td>
+                <td>081395939188</td>
                 <td>Rp. 100.000,00</td>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
-                <td>01-02-2019</td>
+                <td>Office Girl</td>
+                <td>1301164268</td>
+                <td>Nisrina Nurhuda</td>
+                <td>Pegawai Tetap</td>
+                <td>081395939188</td>
                 <td>Rp. 100.000,00</td>
               </tr>
               </tbody>

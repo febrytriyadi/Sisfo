@@ -607,7 +607,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
           </form>
         </div>
         <!-- /.container-fluid -->
-
+        <div class="container-fluid">
+          <div style="float: right; margin-top: 80px;">
+            <a href="datalaporan.php" class="button " style="background-color: deeppink;color: white; padding: 30px 50px;border-radius: 10px; text-decoration: none;">Lihat Daftar Laporan</a>
+          </div>
+        </div>
       </div>
       <!-- End of Main Content -->
 

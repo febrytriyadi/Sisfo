@@ -418,45 +418,45 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
               <tr>
                 <th>No Laporan</th>
                 <th>Nama Laporan</th>
-                <th>Nama Barang</th>
-                <th>Jumlah</th>
+                <th>Jumlah Uang</th>
                 <th>Tanggal</th>
-                <th>Total Harga</th>
+                <th>Total Uang</th>
+                <th>Sisa Uang</th>
               </tr>
               </thead>
                 
               <tbody>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
+                <td>Pengeluaran Uang</td>
+                <td>Rp. 100.000,00</td>
                 <td>01-02-2019</td>
                 <td>Rp. 100.000,00</td>
+                <th>Rp. 0,00</th>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
+                <td>Pengeluaran Uang</td>
+                <td>Rp. 100.000,00</td>
                 <td>01-02-2019</td>
                 <td>Rp. 100.000,00</td>
+                <th>Rp. 0,00</th>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
+                <td>Pengeluaran Uang</td>
+                <td>Rp. 100.000,00</td>
                 <td>01-02-2019</td>
                 <td>Rp. 100.000,00</td>
+                <th>Rp. 0,00</th>
               </tr>
               <tr>  
                 <td>LAP01</td>
-                <td>Laporan Barang Masuk</td>
-                <td>Barang 1</td>
-                <td>100</td>
+                <td>Pengeluaran Uang</td>
+                <td>Rp. 100.000,00</td>
                 <td>01-02-2019</td>
                 <td>Rp. 100.000,00</td>
+                <th>Rp. 0,00</th>
               </tr>
               </tbody>
                 

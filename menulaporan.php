@@ -600,14 +600,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
           <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
           <div class="container">
             <div class="btn-group">
-              <a class="button1" href="laporan.php" style="padding-left: 120px; padding-right: 120px; background-color: red;text-decoration: none;">SDM</a>
+              <a class="button1" href="laporans.php" style="padding-left: 120px; padding-right: 120px; background-color: red;text-decoration: none;">SDM</a>
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </div>
             <div class="btn-group">  
-              <a class="button1" href="laporan.php" style="padding-left: 80px; padding-right: 80px; background-color: green;text-decoration: none;">Keuangan</a>
+              <a class="button1" href="laporanu.php" style="padding-left: 80px; padding-right: 80px; background-color: green;text-decoration: none;">Keuangan</a>
               <span></span>
               <span></span>
               <span></span>
