@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>SB Admin 2 - Input Laporan Keuangan</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -533,33 +533,27 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
-          <form method="post" action="">
+          <form method="post" action="datalaporanu.php">
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 10%">Nama Laporan</span>
-              <select name="nama_laporan" style="width: 90%; padding: 10px;">
+              <select name="nama" style="width: 90%; padding: 10px;">
                 <option value="" required="">Select</option>
-                <option value="tambah obat" required="">Pengeluaran</option>
-                <option value="obat terjual" required="">Pemasukan</option>
+                <option value="Pengeluaran" required="">Pengeluaran</option>
+                <option value="Pemasukan" required="">Pemasukan</option>
               </select>
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
+              <span class="input-group-addon" id="id_uang" style="padding: 10px; width: 10%">ID</span>
+              <input type="text" class="form-control" name="id_uang" placeholder="" aria-describedby="basic-addon1" required="">
+            </div>
+            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" style="padding: 10px; width: 10%">Jumlah Uang</span>
-              <input type="text" class="form-control" name="total_harga" aria-label="Amount (to the nearest dollar)">
+              <input type="text" class="form-control" name="jumlah" aria-label="Amount (to the nearest dollar)" required="">
               <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Tanggal</span>
               <input type="date" class="form-control" name="tanggal" placeholder="" value="<?php echo date("Y-m-d"); ?>" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" style="padding: 10px; width: 10%">Total Uang</span>
-              <input type="text" class="form-control" name="total_harga" aria-label="Amount (to the nearest dollar)">
-              <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
-            </div>
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" style="padding: 10px; width: 10%">Sisa Uang</span>
-              <input type="text" class="form-control" name="total_harga" aria-label="Amount (to the nearest dollar)">
-              <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
             </div>
             <div class="input-group w3-w3layouts col-md-12">
               <input type='reset' class="btn btn-danger" style="width:50%" value='Batal'/>

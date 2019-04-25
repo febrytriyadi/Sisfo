@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>SB Admin 2 - Input Laporan SDM</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -533,40 +533,44 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
-          <form method="post" action="">
+          <form method="post" action="datalaporans.php">
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 10%">Jabatan</span>
-              <select name="nama_laporan" style="width: 90%; padding: 10px;">
+              <select name="jabatan" style="width: 90%; padding: 10px;">
                 <option value="" required="">Select</option>
-                <option value="tambah obat" required="">Presiden</option>
-                <option value="obat terjual" required="">Vice Presiden</option>
-                <option value="obat terjual" required="">General Manager</option>
-                <option value="obat terjual" required="">Director</option>
-                <option value="obat terjual" required="">Manager</option>
-                <option value="obat terjual" required="">HRD</option>
-                <option value="obat terjual" required="">Karyawan</option>
-                <option value="obat terjual" required="">Office Boy/Girl</option>
+                <option value="Presiden" required="">Presiden</option>
+                <option value="Vice Presiden" required="">Vice Presiden</option>
+                <option value="General Manager" required="">General Manager</option>
+                <option value="Director" required="">Director</option>
+                <option value="Manager" required="">Manager</option>
+                <option value="HRD" required="">HRD</option>
+                <option value="Karyawan" required="">Karyawan</option>
+                <option value="Office Boy/Girl" required="">Office Boy/Girl</option>
               </select>
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="nama_obat" style="padding: 10px; width: 10%">ID Identitas</span>
-              <input type="text" class="form-control" name="nama_obat" placeholder="Nama Barang" aria-describedby="basic-addon1">
+              <span class="input-group-addon" id="identitas" style="padding: 10px; width: 10%">ID Identitas</span>
+              <input type="text" class="form-control" name="identitas" placeholder="ID Identitas" aria-describedby="basic-addon1" required="">
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Nama</span>
-              <input type="date" class="form-control" name="tanggal" placeholder="" value="<?php echo date("Y-m-d"); ?>" aria-describedby="basic-addon1">
+              <span class="input-group-addon" id="nama" style="padding: 10px; width: 10%">Nama</span>
+              <input type="text" class="form-control" name="nama" placeholder="" aria-describedby="basic-addon1" required="">
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="jumlah" style="padding: 10px; width: 10%">Status</span>
-              <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Barang" aria-describedby="basic-addon1">
+              <span class="input-group-addon" id="status" style="padding: 10px; width: 10%">Status</span>
+              <input type="text" class="form-control" name="status" placeholder="Status" aria-describedby="basic-addon1" required="">
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="jumlah" style="padding: 10px; width: 10%">No Telp</span>
-              <input type="text" class="form-control" name="jumlah" placeholder="Jumlah Barang" aria-describedby="basic-addon1">
+              <span class="input-group-addon" id="no_tlp" style="padding: 10px; width: 10%">No Telp</span>
+              <input type="text" class="form-control" name="no_tlp" placeholder="Nomor Telepon" aria-describedby="basic-addon1" required="">
+            </div>
+            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
+              <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Tanggal</span>
+              <input type="date" class="form-control" name="tanggal" placeholder="" value="<?php echo date("Y-m-d"); ?>" aria-describedby="basic-addon1" required="">
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" style="padding: 10px; width: 10%">Gaji</span>
-              <input type="text" class="form-control" name="total_harga" aria-label="Amount (to the nearest dollar)">
+              <input type="text" class="form-control" name="gaji" aria-label="Amount (to the nearest dollar)" required="">
               <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
             </div>
             <div class="input-group w3-w3layouts col-md-12">

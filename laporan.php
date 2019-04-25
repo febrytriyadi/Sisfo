@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>SB Admin 2 - Input Laporan Barang</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -532,19 +532,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
-          <form method="post" action="">
+          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan Barang</h1>
+          <form method="post" action="datalaporan.php">
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 10%">Nama Laporan</span>
-              <select name="nama_laporan" style="width: 90%; padding: 10px;">
+              <span class="input-group-addon" id="nama" style="padding: 10px; width: 10%">Nama Laporan</span>
+              <select name="nama" style="width: 90%; padding: 10px;">
                 <option value="" required="">Select</option>
-                <option value="tambah obat" required="">Tambah Barang</option>
-                <option value="obat terjual" required="">Barang Terjual</option>
+                <option value="Tambah Barang" required="">Tambah Barang</option>
+                <option value="Barang Terjual" required="">Barang Terjual</option>
               </select>
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="nama_obat" style="padding: 10px; width: 10%">Nama Barang</span>
-              <input type="text" class="form-control" name="nama_obat" placeholder="Nama Barang" aria-describedby="basic-addon1">
+              <span class="input-group-addon" id="nama_barang" style="padding: 10px; width: 10%">Nama Barang</span>
+              <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" aria-describedby="basic-addon1">
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Tanggal</span>
@@ -556,7 +556,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" style="padding: 10px; width: 10%">Total Harga</span>
-              <input type="text" class="form-control" name="total_harga" aria-label="Amount (to the nearest dollar)">
+              <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)">
               <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
             </div>
             <div class="input-group w3-w3layouts col-md-12">
