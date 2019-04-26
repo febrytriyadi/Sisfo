@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>SB Admin - Menu Laporan</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -298,7 +298,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup></sup></div>
       </a>
 
       <!-- Divider -->
@@ -557,7 +557,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
           <!-- Page Heading -->
           <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
-          <div class="container">
+          <div class="container" style="margin-top: 100px;">
             <div class="btn-group">
               <a class="button1" href="laporans.php" style="padding-left: 120px; padding-right: 120px; background-color: red;text-decoration: none;">SDM</a>
               <span></span>

@@ -1,15 +1,16 @@
 <?php 
   include("conn.php");
-  if( (isset($_POST['nama'])) && (isset($_POST['nama_barang'])) && (isset($_POST['tanggal'])) && (isset($_POST['jumlah'])) && (isset($_POST['total'])) ){
+  if( (isset($_POST['nama'])) && (isset($_POST['id_barang']))  && (isset($_POST['nama_barang'])) && (isset($_POST['tanggal'])) && (isset($_POST['jumlah'])) && (isset($_POST['total'])) ){
     $nama = $_POST['nama'];
+    $id_barang = $_POST['id_barang'];
     $nama_barang = $_POST['nama_barang'];
     $tanggal = $_POST['tanggal'];
     $jumlah = $_POST['jumlah'];
     $total = $_POST['total'];
-    $INSERT = "INSERT into laporanbarang (nama, nama_barang, tanggal, jumlah, total) values('$nama', '$nama_barang', '$tanggal', $jumlah, $total)";
+    $INSERT = "INSERT into laporanbarang(nama, id_barang, nama_barang, tanggal, jumlah, total) values('$nama', '$id_barang', '$nama_barang', '$tanggal', $jumlah, $total)";
     mysqli_query($conn,$INSERT);
   }
-  $data = mysqli_query($conn, "select no_laporan,nama,nama_barang,tanggal,jumlah,total from laporanbarang");
+  $data = mysqli_query($conn, "select no_laporan,nama,id_barang,nama_barang,tanggal,jumlah,total from laporanbarang");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup></sup></div>
       </a>
 
       <!-- Divider -->
@@ -320,6 +321,7 @@
                     <tr>
                       <th>No Laporan</th>
                       <th>Nama Laporan</th>
+                      <th>ID</th>
                       <th>Nama Barang</th>
                       <th>Tanggal</th>
                       <th>Jumlah Barang</th>
@@ -331,6 +333,7 @@
                     <tr>
                       <th>No Laporan</th>
                       <th>Nama Laporan</th>
+                      <th>ID</th>
                       <th>Nama Barang</th>
                       <th>Tanggal</th>
                       <th>Jumlah Barang</th>
@@ -342,6 +345,7 @@
                     <?php foreach ($data as $key): 
                       $no_laporan=$key['no_laporan'];  
                       $nama=$key['nama'];  
+                      $id_barang=$key['id_barang'];  
                       $nama_barang=$key['nama_barang'];  
                       $tanggal=$key['tanggal'];  
                       $jumlah=$key['jumlah'];  
@@ -350,11 +354,12 @@
                     <tr>
                       <td>LAP<?php echo $no_laporan; ?></td>
                       <td><?php echo $nama; ?></td>
+                      <td><?php echo $id_barang; ?></td>
                       <td><?php echo $nama_barang; ?></td>
                       <td><?php echo $tanggal; ?></td>
-                      <td><?php echo $jumlah; ?></td>
-                      <td><?php echo $total; ?></td>
-                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px;
+                      <td><?php echo number_format($jumlah); ?></td>
+                      <td><?php echo number_format($total); ?></td>
+                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px; text-decoration: none;
                       " href="#" data-toggle="modal" data-target="#editModal<?php echo $no_laporan; ?>">
                             <i class=""></i>
                             Edit
@@ -383,6 +388,10 @@
                                 </select>
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
+                                <span class="input-group-addon" id="id_barang" style="padding: 10px; width: 110px;">ID Barang</span>
+                                <input type="text" class="form-control" name="id_barang" value="<?php echo $id_barang ?>" aria-describedby="basic-addon1">
+                              </div>
+                              <div class="input-group w3_w3layouts" style="margin: 0.5%;">
                                 <span class="input-group-addon" id="nama_barang" style="padding: 10px; width: 110px">Nama Barang</span>
                                 <input type="text" class="form-control" name="nama_barang" value="<?php echo $nama_barang ?>" aria-describedby="basic-addon1">
                               </div>
@@ -396,7 +405,7 @@
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
                                 <span class="input-group-addon" style="padding: 10px; width: 110px">Total Harga</span>
-                                <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)">
+                                <input type="numbers" class="form-control" id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" name="total" aria-label="Amount (to the nearest dollar)">
                                 <span class="input-group-addon" style="padding: 10px; width: 40px">.00</span>
                               </div>
                               <div class="input-group w3-w3layouts col-md-12">

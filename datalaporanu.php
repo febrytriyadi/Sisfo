@@ -5,20 +5,26 @@
     $id_uang = $_POST['id_uang'];
     $jumlah = $_POST['jumlah'];
     $tanggal = $_POST['tanggal'];
-    $sisa = 10000000;
-    if ($nama = 'Pengeluaran') {
+    $sisa=0;
+    $x=mysqli_query($conn,'select * from laporanuang');
+    $status=true;
+    foreach ($x as $key) {
+      $sisa=$key['sisa'];
+    }
+    if ($nama == 'Pengeluaran') {
       if ($sisa >= $jumlah) {
-        $total = $sisa - $jumlah;
-        $sisa = $total;
+        $sisa = $sisa - $jumlah;
       }else{
-        echo "Maaf Saldo Tidak Cukup!";
+        $status=false;
+        echo "<script>alert('Maaf Saldo Anda Tidak Mencukupi!')</script>";
       }
     }else{
-      $total = $sisa + $jumlah;
-      $sisa = $total;
+      $sisa = $sisa + $jumlah;
     }
-    $INSERT = "INSERT into laporanuang (nama, id_uang, jumlah, tanggal, total, sisa) values('$nama', '$id_uang', $jumlah, '$tanggal', $total, $sisa)";
-    mysqli_query($conn,$INSERT);
+    if($status){
+      $INSERT = "INSERT into laporanuang (nama, id_uang, jumlah, tanggal, total, sisa) values('$nama', '$id_uang', $jumlah, '$tanggal', $jumlah, $sisa)";
+      mysqli_query($conn,$INSERT);
+    }
   }
   $data = mysqli_query($conn, "select no_laporan,nama,id_uang,jumlah,tanggal,total,sisa from laporanuang");
 ?>
@@ -364,11 +370,11 @@
                       <td>LAP<?php echo $no_laporan; ?></td>
                       <td><?php echo $id_uang; ?></td>
                       <td><?php echo $nama; ?></td>
-                      <td><?php echo $jumlah; ?></td>
+                      <td><?php echo number_format($jumlah); ?></td>
                       <td><?php echo $tanggal; ?></td>
-                      <td><?php echo $total; ?></td>
-                      <td><?php echo $sisa; ?></td>
-                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px;
+                      <td style="font-weight: bold;"><?php echo number_format($total); ?></td>
+                      <td><?php echo number_format($sisa); ?></td>
+                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px; text-decoration: none;
                       " href="#" data-toggle="modal" data-target="#editModal<?php echo $no_laporan; ?>">
                             <i class=""></i>
                             Edit
@@ -389,35 +395,25 @@
                             <form method="post" action="M_laporanu.php">
                               <input type="hidden" name="id" value="<?php echo $no_laporan; ?>">
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 10%">Nama Laporan</span>
-                                <select name="nama" style="width: 90%; padding: 10px;">
+                                <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 100px;">Nama Laporan</span>
+                                <select name="nama" style="width: 75%; padding: 10px;">
                                   <option value="" required="">Select</option>
                                   <option value="Pengeluaran" required="">Pengeluaran</option>
                                   <option value="Pemasukan" required="">Pemasukan</option>
                                 </select>
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" id="id_uang" style="padding: 10px; width: 10%">ID</span>
+                                <span class="input-group-addon" id="id_uang" style="padding: 10px; width: 100px">ID</span>
                                 <input type="text" class="form-control" name="id_uang" value="<?php echo $id_uang ?>" aria-describedby="basic-addon1" required="">
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" style="padding: 10px; width: 10%">Jumlah Uang</span>
-                                <input type="text" class="form-control" name="jumlah" aria-label="Amount (to the nearest dollar)" required="">
-                                <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
+                                <span class="input-group-addon" style="padding: 10px; width: 100px;">Jumlah Uang</span>
+                                <input type="numbers" class="form-control" id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" name="jumlah" aria-label="Amount (to the nearest dollar)" required="">
+                                <span class="input-group-addon" style="padding: 10px; width: 40px;">.00</span>
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Tanggal</span>
+                                <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 100px;">Tanggal</span>
                                 <input type="date" class="form-control" name="tanggal" placeholder="" value="<?php echo date("Y-m-d"); ?>" aria-describedby="basic-addon1">
-                              </div>
-                              <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" style="padding: 10px; width: 10%">Total Uang</span>
-                                <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)" required="">
-                                <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
-                              </div>
-                              <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-                                <span class="input-group-addon" style="padding: 10px; width: 10%">Sisa Uang</span>
-                                <input type="text" class="form-control" name="sisa" aria-label="Amount (to the nearest dollar)" required="">
-                                <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
                               </div>
                               <div class="input-group w3-w3layouts col-md-12">
                               </div>

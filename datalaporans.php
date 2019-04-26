@@ -24,7 +24,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin  - Daftar Laporan SDM</title>
+  <title>SB Admin - Daftar Laporan SDM</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup></sup></div>
       </a>
 
       <!-- Divider -->
@@ -361,10 +361,10 @@
                       <td><?php echo $status; ?></td>
                       <td><?php echo $no_tlp; ?></td>
                       <td><?php echo $tanggal; ?></td>
-                      <td><?php echo $gaji; ?></td>
-                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px;
+                      <td><?php echo number_format($gaji); ?></td>
+                      <td><a class="button btn-primary" style="border-radius: 5px; padding: 5px 20px; text-decoration: none;
                       " href="#" data-toggle="modal" data-target="#editModal<?php echo $no_laporan; ?>">
-                            <i class=""></i>
+                            <i class="fa fa-pencil"></i>
                             Edit
                           </a>
                       </td>
@@ -398,7 +398,7 @@
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
                                 <span class="input-group-addon" id="id" style="padding: 10px; width: 100px;">ID Identitas</span>
-                                <input type="text" class="form-control" name="identitas" placeholder="<?php echo $identitas ?>" aria-describedby="basic-addon1" required="">
+                                <input type="text" class="form-control" name="identitas" value="<?php echo $identitas ?>" aria-describedby="basic-addon1" required="">
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
                                 <span class="input-group-addon" id="nama" style="padding: 10px; width: 100px;">Nama</span>
@@ -418,7 +418,7 @@
                               </div>
                               <div class="input-group w3_w3layouts" style="margin: 0.5%;">
                                 <span class="input-group-addon" style="padding: 10px; width: 100px;">Gaji</span>
-                                <input type="text" class="form-control" name="gaji" aria-label="Amount (to the nearest dollar)" required="">
+                                <input type="numbers" class="form-control" id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" name="gaji" aria-label="Amount (to the nearest dollar)" required="">
                                 <span class="input-group-addon" style="padding: 10px; width: 40px;">.00</span>
                               </div>
                               <div class="input-group w3-w3layouts col-md-12">

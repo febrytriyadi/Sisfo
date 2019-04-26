@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Input Laporan Barang</title>
+  <title>SB Admin - Input Laporan Barang</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -274,7 +274,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup></sup></div>
       </a>
 
       <!-- Divider -->
@@ -543,6 +543,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
               </select>
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
+              <span class="input-group-addon" id="id_barang" style="padding: 10px; width: 10%">ID Barang</span>
+              <input type="text" class="form-control" name="id_barang" placeholder="" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" id="nama_barang" style="padding: 10px; width: 10%">Nama Barang</span>
               <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" aria-describedby="basic-addon1">
             </div>
@@ -556,7 +560,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
             </div>
             <div class="input-group w3_w3layouts" style="margin: 0.5%;">
               <span class="input-group-addon" style="padding: 10px; width: 10%">Total Harga</span>
-              <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)">
+              <input type="numbers" class="form-control" name="total" aria-label="Amount (to the nearest dollar)">
               <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
             </div>
             <div class="input-group w3-w3layouts col-md-12">
@@ -623,6 +627,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="my.js"></script>
 
 </body>
 
