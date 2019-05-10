@@ -101,7 +101,7 @@
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item active" href="menulaporan.php">Laporan</a>
+            <a class="collapse-item active" href="index.php">Laporan</a>
           </div>
         </div>
       </li>

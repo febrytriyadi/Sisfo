@@ -1,3 +1,7 @@
+<?php 
+  $config['base_url'] = 'http://localhost/sisfo';
+  $config['index_page'] = 'index.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Input Laporan Keuangan</title>
+  <title>SB Admin - Menu Laporan</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -260,6 +264,30 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #fff;
   border: 1px solid #ddd;
 }
+.button1{
+  border-radius: 10px;
+  color: #1670f0;
+  padding: 30px 60px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  font-weight: bold;
+}
+.button1:before{
+  content: '';
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255,255,255,0.05);
+}
+.button span:nth-child(1){
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, #0c002b, #1779ff);
+}
 </style>
 <body id="page-top">
 
@@ -309,7 +337,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item active" href="index.php">Laporan</a>
+            <a class="collapse-item active" href="menulaporan.php">Laporan</a>
           </div>
         </div>
       </li>
@@ -532,49 +560,33 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan Keuangan</h1>
-          <?php 
-            include("conn.php");
-            $data = mysqli_query($conn, "select * from laporanuang");
-            foreach ($data as $key) {
-              $sisa = $key['sisa']; 
-            }
-            echo "<h5 style='margin-left:10px;'>Saldo = Rp. ".number_format($sisa)."</h5>";
-          ?>
-          <form method="post" action="datalaporanu.php">
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="nama_laporan" style="padding: 10px; width: 10%">Nama Laporan</span>
-              <select name="nama" style="width: 90%; padding: 10px;">
-                <option value="" required="">Select</option>
-                <option value="Pengeluaran" required="">Pengeluaran</option>
-                <option value="Pemasukan" required="">Pemasukan</option>
-              </select>
+          <h1 class="h3 mb-4 text-gray-800" style="font-weight: bold; font-size: 50px;">Input Laporan</h1>
+          <div class="container" style="margin-top: 100px;">
+            <div class="btn-group">
+              <a class="button1" href="laporans.php" style="padding-left: 120px; padding-right: 120px; background-color: red;text-decoration: none;">SDM</a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="id_uang" style="padding: 10px; width: 10%">ID</span>
-              <input type="text" class="form-control" name="id_uang" placeholder="" aria-describedby="basic-addon1" required="">
+            <div class="btn-group">  
+              <a class="button1" href="laporanu.php" style="padding-left: 80px; padding-right: 80px; background-color: green;text-decoration: none;">Keuangan</a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div> 
+            <div class="btn-group">
+              <a class="button1" href="laporan.php" style="padding-left: 100px; padding-right: 100px; background-color: lightblue;text-decoration: none;">Barang</a>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" style="padding: 10px; width: 10%">Jumlah Uang</span>
-              <input type="numbers" class="form-control" name="jumlah" aria-label="Amount (to the nearest dollar)" required="">
-              <span class="input-group-addon" style="padding: 10px; width: 5%">.00</span>
-            </div>
-            <div class="input-group w3_w3layouts" style="margin: 0.5%;">
-              <span class="input-group-addon" id="tanggal" style="padding: 10px; width: 10%">Tanggal</span>
-              <input type="date" class="form-control" name="tanggal" placeholder="" value="<?php echo date("Y-m-d"); ?>" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group w3-w3layouts col-md-12">
-              <input type='reset' class="btn btn-danger" style="width:50%" value='Batal'/>
-                    <input type='submit' class="btn btn-primary" style="width:50%" value='Simpan'/>
-            </div>
-          </form>
-        </div>
-        <!-- /.container-fluid -->
-        <div class="container-fluid">
-          <div style="float: right; margin-top: 80px;">
-            <a href="datalaporanu.php" class="button " style="background-color: deeppink;color: white; padding: 30px 50px;border-radius: 10px; text-decoration: none;">Lihat Daftar Laporan</a>
           </div>
         </div>
+        <!-- /.container-fluid -->
+
       </div>
       <!-- End of Main Content -->
 
@@ -627,7 +639,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  <script src="my.js"></script>
 
 </body>
 
